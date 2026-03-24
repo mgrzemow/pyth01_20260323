@@ -37,5 +37,26 @@ if __name__ == '__main__':
     nr = 34
     plec_facet = True
 
-    print(str(dzien).zfill(2))
-    print(f'{dzien:02d}')
+    # if rok >= 2000:
+    #     miesiac += 20
+    # rok_s = str(rok)[-2:]
+    # miesiac_s = str(miesiac).zfill(2)
+    # dzien_s = str(dzien).zfill(2)
+    # nr_s = f'{nr:03d}'
+    # plec_s = '1' if plec_facet else '0'
+    #
+    # pesel = f'{rok_s}{miesiac_s}{dzien_s}{nr_s}{plec_s}'
+
+    pesel = f'{str(rok)[-2:]}{miesiac + 20 if rok >= 2000 else miesiac:02d}{dzien:02d}{nr:03d}{int(plec_facet)}'
+
+    print(pesel)
+
+    # suma = 0
+    # for znak in pesel:
+    #     suma += int(znak)
+    # # operator += dla napisaów doklaja napis do napisu
+    # pesel += str(suma)[-1]
+    # suma wyrażenia generatorowego
+
+    pesel += str(sum((int(znak)for znak in pesel)))[-1]
+    print(pesel)
