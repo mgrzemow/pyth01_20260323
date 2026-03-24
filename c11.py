@@ -57,6 +57,7 @@ if __name__ == '__main__':
     # # operator += dla napisaów doklaja napis do napisu
     # pesel += str(suma)[-1]
     # suma wyrażenia generatorowego
-
+    
     pesel += str(sum((int(znak)for znak in pesel)))[-1]
     print(pesel)
+    
