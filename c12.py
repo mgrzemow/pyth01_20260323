@@ -16,3 +16,10 @@ Podpowiedzi:
  - import time
    time.sleep()
 """
+import os.path
+import time
+if __name__ == '__main__':
+
+    print(os.path.isfile('lock.txt'))
+    time.sleep(1)
+    print(os.path.isfile('lock.txt'))
