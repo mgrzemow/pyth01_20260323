@@ -107,3 +107,61 @@ print(x[1:-1:2])
 
 # odwrócenie kolejności
 print(x[::-1])
+
+x = 'mama'
+x.upper()
+
+# metody informacyjne
+x = 'mama'
+# metody .is_costam
+print(x.islower())
+print(x.isupper())
+print(x.startswith('ma'))
+print(x.endswith('ma'))
+print(x.count('ma'))
+print(x.find('ma'))
+# Jak sprawdzić czy coś jest w czymś w pythonie - in
+# BARDZO WARTO ZAPAMIĘTAĆ
+print('ma' in x)
+
+# zarządzanie wielkością zanaków
+x = 'ala ma kota'
+print(x.upper())
+print(x.lower())
+print(x.title())
+print(x.capitalize())
+
+print(x.zfill(13))
+
+#czyszczenie
+x = 'Jan\n'
+print(x.strip())
+x = '\t  \n ala  ma \t kota  \n\t'
+print(x.strip())
+print(x.lstrip())
+print(x.rstrip())
+
+x = '10 33 55END'
+print(x.removesuffix('END'))
+x = '10 33 55'
+print(x.removesuffix('END'))
+
+# podział i łączenie
+x = 'ala ma kota'
+print(x.split(' '))
+x = 'ala:ma:kota'
+print(x.split(':'))
+
+x = 'ala  ma\tkota'
+print(x.split(' '))
+print(x.split())
+
+x = '\t \t ala \t ma\t\nkota   \n'
+print(x.split(' '))
+print(x.split())
+
+x = '\t \t ala, \t ma\t\nkota   \n'
+print(x.replace(',', ' ').split())
+
+x = ['ala', 'ma', 'kota']
+print(':'.join(x))
