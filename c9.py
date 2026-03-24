@@ -17,4 +17,8 @@
 
 if __name__ == '__main__':
     tag = input('Podaj tag: ')
-    wynik = f'<a href = "http://onet.pl">onet</a>'
+    tag_w = input('Podaj wartość tagu: ')
+    atr = input('Podaj atrybut: ')
+    atr_w = input('Podaj wartość atrybutu: ')
+    wynik = f'<{tag} {atr} = "{atr_w}">{tag_w}</{tag}>'
+    print(wynik)
