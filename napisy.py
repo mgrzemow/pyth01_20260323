@@ -60,3 +60,50 @@ x = x.upper()
 print(id(x))
 print(x)
 
+# formatowanie pól w fstrings
+# konstrukcja stringów
+imie = 'Jan\n'
+wiek = 44.23143234
+waga = 88.123123
+wzrost = 178.213123312
+y = f'{imie.strip():^12} ma {wiek:8.0f} lat, wazy {waga:.1f} kg i ma {wzrost:.2f}cm wzrostu.'
+print(y)
+
+# napis jako wzorzec
+szablon = '{:^12} ma {:8.0f} lat, wazy {:.1f} kg i ma {:.2f}cm wzrostu.'
+# wypełnienie szablonu danymi
+wynik = szablon.format(imie.strip(), wiek, waga, wzrost)
+print(wynik)
+# import requests
+# szablon_url = 'https://api.nbp.pl/api/exchangerates/rates/a/{}/?format=json'
+# waluta = 'usd'
+# url = szablon_url.format(waluta)
+# r = requests.get(url)
+# print(r.json()['rates'][0]['mid'])
+
+# zakresy, slicing, wycinanki
+x = 'abcdefgh'
+
+print(x[0])
+print(x[7])
+print(x[-1])
+print(x[-8])
+
+print(x[1:4])
+print(x[1:-1])
+# pierwsze 2:
+print(x[:2])
+# ostatnie 3:
+print(x[-3:])
+# wszystkie poza pierwszymi 3:
+print(x[3:])
+# wszystkie poza ostatnimi 2:
+print(x[:-2])
+# print(x[:do])
+# print(x[od:])
+
+# 3 parametr to krok
+print(x[1:-1:2])
+
+# odwrócenie kolejności
+print(x[::-1])
