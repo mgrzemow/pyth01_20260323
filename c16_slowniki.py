@@ -14,6 +14,7 @@
 Podpowiedzi:
  - nazwę domeny można wyciąć z adresu znajdując znak @
 """
+from pprint import pprint
 
 {
     'gmail.com': {'ala@gmail.com', 'ela@gmail.com'},
@@ -21,7 +22,7 @@ Podpowiedzi:
 }
 
 if __name__ == '__main__':
-    zbior_maili = set()
+    slownik_maili = {}
     with open('emails.txt', 'r', encoding='utf8') as f:
         for linia in f:
             # wyczyścić adres
@@ -29,15 +30,16 @@ if __name__ == '__main__':
             # sprawdzić czy poprawny
             if '@' in linia:
                 # dodać do zbioru
-                zbior_maili.add(linia.lower())
+                domena = linia.split('@')[1]
+                if domena not in slownik_maili:
+                    slownik_maili[domena] = set()
+                slownik_maili[domena].add(linia.lower())
 
-    print(zbior_maili)
+    pprint(slownik_maili)
     # dla każdego adresu ze zbioru:
-    for email in zbior_maili:
-        # otowrzyć plik domena.txt w trybie at
-        domena = email.split('@')[1]
-
-        with open(domena + '.txt', 'at', encoding='utf8') as f:
+    for domena, zbior_maili in slownik_maili.items():
+        with open(domena + '.txt', 'wt', encoding='utf8') as f:
             # dopisać adres
-            f.write(email + '\n')
+            for email in zbior_maili:
+                f.write(email + '\n')
 

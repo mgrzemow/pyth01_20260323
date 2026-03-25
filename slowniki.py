@@ -97,7 +97,7 @@ for slowo in x.split():
         d[pl] = []
     d[pl].append(slowo)
 
-# get
+# get - niezbyt ładne
 d = {}
 for slowo in x.split():
     pl = slowo[0]
@@ -110,3 +110,12 @@ d = collections.defaultdict(list)
 for slowo in x.split():
     pl = slowo[0]
     d[pl].append(slowo)
+
+# skrótowe iterowanie po słowniku:
+d = {'ala': 45,
+     'tomek': 33,
+     'zosia': 45,
+     'karol': 35,
+     }
+for klucz, w in d.items():
+     print(klucz, w)
