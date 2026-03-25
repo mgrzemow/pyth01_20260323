@@ -87,3 +87,35 @@ for r in x:
     imie = r[0]
     wiek = r[1]
     ...
+
+# unpacking
+r = ['Jan', 44, 189, 78, 'Otwock', True]
+imie, wiek, wzrost, waga, miasto, czy_aktywne = r
+print(imie, miasto)
+
+#  unpacking działa pomiędzy listami a krotkami
+r = ('Jan', 45)
+imie, wiek = r
+
+r = ('Jan', 45)
+(imie, wiek) = r
+
+r = ['Jan', 45]
+imie, wiek = r
+
+[imie, wiek] = r
+
+# w miejscach gdzie to jest jednoznaczne składniowo - można pominąć nawiasy krotki
+x = (1, 2)
+x = 1, 2
+print(x)
+
+# unpacking pozwala na fajne sztuczki
+x = 'Ala'
+y = 'Karol'
+
+# jak zamienić wartości
+x, y = y, x
+
+print(x, y)
+# unpacking ma więcej funkcjonalności - do doczytania gorąco polecam!!!

@@ -33,8 +33,27 @@ SUMA - 7 znaków przed kropką i 2 po
 
 Podpowiedzi:
  - formatowanie f-stringow
- - czytanie z pliku - patrz ściąga na slacku
+ - czytanie z pliku - patrz ściąga
 
 Rozszerzenie ćwiczenia:
  - zebrać paragon w wieloliniowym stringu i wypidać na sam koniec
 """
+if __name__ == '__main__':
+    with open('towary.txt', 'rt', encoding='utf-8') as f:
+        suma = 0
+        for linia in f:
+            # podzielić linię na kawałki
+            podzielona_linia = linia.split()
+            # przypisać do zmiennych
+            # skonwertować
+            towar, ilosc, jm, cena = podzielona_linia
+            ilosc = float(ilosc)
+            cena = float(cena)
+            # wyliczyć wartość pozycji
+            wartosc = round(ilosc * cena, 2)
+            # zwiększyć sumę
+            suma = round(suma + wartosc, 2)
+            # wypisac linię paragonu
+            print(f'{towar:12} {ilosc:5.2f} {jm:4} x {cena:6.2f} {wartosc:8.2f}')
+        print('-' * 41)
+        print(f'SUMA: {suma:35.2f}')
