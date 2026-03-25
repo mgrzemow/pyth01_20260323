@@ -1,6 +1,16 @@
+# tryby
+# Pierwszy znak
+# r - read
+# w - write
+# a - append
+# Drugi znak
+# t - text (domyślny)
+# b - binary
+
 with open('c10.py', mode='rt', encoding='utf-8') as f:
     # tryb odczytu w całości
     tekst = f.read()
+
 
 print(tekst)
 
@@ -14,6 +24,6 @@ with open('tmp.txt', 'wt', encoding='utf-8') as f:
     f.write('linia1\n')
     f.write('linia2\n')
     f.write('linia3\n')
-    # pomimo wyjątku, dzięki with mamy gwarancję że plik się zamknie
+    # pomimo wyjątku, dzięki "with" mamy gwarancję że plik się zamknie
     x = 9 / 0
     f.write('linia4\n')
