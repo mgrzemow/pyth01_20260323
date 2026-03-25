@@ -16,8 +16,6 @@
 
 """
 
-import math
-
 if __name__ == '__main__':
 
     a = float(input('Podaj długość boku: '))

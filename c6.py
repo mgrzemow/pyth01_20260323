@@ -7,7 +7,6 @@
 # else:
 #     kod
 
-import math
 import datetime as dt
 
 x = dt.date.today()

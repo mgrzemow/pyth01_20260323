@@ -15,7 +15,6 @@ Podpowiedzi:
 
 Rozszerzenia ćwiczenia:
 """
-from pprint import pprint
 
 if __name__ == '__main__':
     lista_imion = []

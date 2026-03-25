@@ -1,5 +1,5 @@
-print('asdasdasdsa')
-# Todo asdasdasd
-print(12)
-x = 12 - 9 + 33
-
+x = '12.44332asdasd'
+try:
+    x = float(x)
+except ValueError:
+    print('napis błędny')

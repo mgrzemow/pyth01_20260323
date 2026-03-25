@@ -41,3 +41,32 @@ Podpowiedzi:
  - pętla for
  - formatowanie f-stringow
 """
+
+if __name__ == '__main__':
+    lista_rekordow = []
+    with open('towary.txt', 'rt', encoding='utf-8') as f:
+        for linia in f:
+            # podzielić linię na kawałki
+            podzielona_linia = linia.split()
+            # przypisać do zmiennych
+            # skonwertować
+            towar, ilosc, jm, cena = podzielona_linia
+            ilosc = float(ilosc)
+            cena = float(cena)
+            # tu
+            r = (towar, ilosc, jm, cena)
+            lista_rekordow.append(r)
+    # pprint(lista_rekordow)
+
+    suma = 0
+    paragon = ''
+    for towar, ilosc, jm, cena in lista_rekordow:
+        # wyliczyć wartość pozycji
+        wartosc = round(ilosc * cena, 2)
+        # zwiększyć sumę
+        suma = round(suma + wartosc, 2)
+        # wypisac linię paragonu
+        paragon += f'{towar:12} {ilosc:5.2f} {jm:4} x {cena:6.2f} {wartosc:8.2f}\n'
+    paragon += '-' * 41 + '\n'
+    paragon += f'SUMA: {suma:35.2f}\n'
+    print(paragon)
