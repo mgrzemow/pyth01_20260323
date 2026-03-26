@@ -12,14 +12,18 @@ Napisać program, który:
  - wczytać z konsoli i zamienić na liczbę w jednej linii
 """
 
+def wylicz_netto(brutto, stawka):
+    netto = round(brutto / (1 + stawka / 100), 2)
+    vat = round(brutto - netto, 2)
+    return netto, vat
+
 if __name__ == '__main__':
     brutto = input('Podaj kwotę brutto: ')
     stawka = input('Podaj stawkę VAT: ')
     brutto = float(brutto)
     stawka = float(stawka)
 
-    netto = round(brutto / (1 + stawka / 100), 2)
-    vat = round(brutto - netto, 2)
+    netto, vat = wylicz_netto(brutto, stawka)
 
     print('Brutto: ', brutto)
     print('Netto: ', netto)

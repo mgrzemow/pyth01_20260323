@@ -16,17 +16,23 @@
 
 """
 
+
+def wylicz_pole(a, b, c):
+    if a > b + c or b > a + c or c > a + b:
+        return None
+    else:
+        p = 0.5 * (a + b + c)
+        x = p * (p - a) * (p - b) * (p - c)
+        return x ** .5
+
+
 if __name__ == '__main__':
 
     a = float(input('Podaj długość boku: '))
     b = float(input('Podaj długość boku: '))
     c = float(input('Podaj długość boku: '))
-
-    if a > b + c or b > a + c or c > a + b:
-        print('trójkąt nie istnieje')
+    w = wylicz_pole(a, b, c)
+    if w:
+        print('Pole', w)
     else:
-        p = 0.5 * (a + b + c)
-        x = p * (p - a) * (p - b) * (p - c)
-        print('Pole', x ** .5)
-    
-    
+        print('trójkąt nie istnieje')

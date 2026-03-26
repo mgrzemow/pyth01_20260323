@@ -164,4 +164,20 @@ def f11():
     f11_1()
 
 
-f11()
+# f11()
+
+# Type hinting - czyli podpowiadanie typów
+# fajny opis tu:
+# https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
+# Docstrings - czyli dokumentacja w kodzie
+def f12(p1: float, p2: float, p3: float, x: float) -> float:
+    """
+    Wylicza wielomian drugiego stopnia
+
+    Dalszy opis, lorem ipsum...
+    """
+    print(p1, p2, p3, x)
+    return p1 * x ** 2 + p2 * x + p3
+
+w = f12(1, 2, 3, 4)
+print(w)
