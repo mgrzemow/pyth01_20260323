@@ -1,5 +1,10 @@
-x = '12.44332asdasd'
-try:
-    x = float(x)
-except ValueError:
-    print('napis błędny')
+d = {}
+towar = 'ser'
+ilosc = 12
+jm = 'kg'
+cena = 111
+k = (ilosc, jm, cena)
+d[towar] = k
+
+
+imie, wiek, (miasto, kraj) = ('Ala', 33, ('Krakow', 'Polska'))

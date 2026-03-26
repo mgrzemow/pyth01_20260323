@@ -46,3 +46,45 @@ Podpowiedzi:
  - co by było gdyby mógł wystąpić towar o różnych jednostkach miary.
 
 """
+from pprint import pprint
+
+if __name__ == '__main__':
+    slownik_rekordow = {}
+    with open('towary.txt', 'rt', encoding='utf-8') as f:
+        for linia in f:
+            # podzielić linię na kawałki
+            podzielona_linia = linia.split()
+            # przypisać do zmiennych
+            # skonwertować
+            towar, ilosc, jm, cena = podzielona_linia
+            ilosc = float(ilosc)
+            cena = float(cena)
+            # jeżeli już było to sumuję ilości
+            if towar in slownik_rekordow:
+                slownik_rekordow[towar][0] += ilosc
+            # a jak nie było to po prostu dodaję
+            else:
+                slownik_rekordow[towar] = [ilosc, jm, cena]
+
+            # # jeżeli już było to sumuję ilości
+            # if towar in slownik_rekordow:
+            #     stara_ilosc = slownik_rekordow[towar][0]
+            #     slownik_rekordow[towar] = (ilosc + stara_ilosc, jm, cena)
+            # # a jak nie było to po prostu dodaję
+            # else:
+            #     slownik_rekordow[towar] = (ilosc, jm, cena)
+
+    pprint(slownik_rekordow)
+
+    suma = 0
+    paragon = ''
+    for towar, (ilosc, jm, cena) in slownik_rekordow.items():
+        # wyliczyć wartość pozycji
+        wartosc = round(ilosc * cena, 2)
+        # zwiększyć sumę
+        suma = round(suma + wartosc, 2)
+        # wypisac linię paragonu
+        paragon += f'{towar:12} {ilosc:5.2f} {jm:4} x {cena:6.2f} {wartosc:8.2f}\n'
+    paragon += '-' * 41 + '\n'
+    paragon += f'SUMA: {suma:35.2f}\n'
+    print(paragon)
